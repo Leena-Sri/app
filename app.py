@@ -203,16 +203,6 @@ def logout():
     session.clear()
     return redirect("/login")
 
-@app.route('/', methods=['GET','POST'])
-def register():
-    name = None
-    email = None
-    if request.method == 'POST':
-        name = request.form.get('name')
-        email = request.form.get('email')
-    return render_template_string(FORM_HTML, name=name, email=email)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
-
-
